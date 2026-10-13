@@ -1,0 +1,8 @@
+# Local CPU test environment for v2gpu (tests_gpu/): uv venv .venv-gpu && uv pip install --python .venv-gpu/bin/python -r requirements-cpu-test.txt
+torch==2.14.0
+transformers==5.17.0
+peft==0.21.0
+safetensors==0.8.0
+tokenizers==0.23.2
+jinja2
+pytest==8.3.3

@@ -1,0 +1,16 @@
+__pycache__/
+*.pyc
+.pytest_cache/
+.venv/
+repos/
+repos-full/
+repos-hist/
+hf-cache/
+out/
+.venv-gpu/
+.DS_Store
+ship/
+results/
+results-lost/
+/A3/
+/packages/

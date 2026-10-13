@@ -1,0 +1,16 @@
+# Generation pod environment, pre-declared fallback pin set "fallback-bnb" (decision 24/09): bitsandbytes 0.49.2,
+# the version in vLLM's documentation. NF4 bit-identity with training's 0.50.2 is not proven; the canary's
+# hf_agreement gate measures the end-to-end effect.
+# Chosen ONLY at the canary (KIND=gen GEN_SET=fallback-bnb bash ops/pod_bootstrap.sh), then fixed for the whole
+# run: every job names it (--pin-set fallback-bnb). Resolves for x86_64-manylinux_2_28, Python 3.12 (uv pip
+# compile). These pins equal v2gpu.engines.PIN_SETS["fallback-bnb"] (tested).
+vllm==0.27.1
+torch==2.13.0
+transformers==5.17.0
+tokenizers==0.23.2
+bitsandbytes==0.49.2
+peft==0.21.0
+safetensors==0.8.0
+huggingface_hub
+jinja2
+pytest

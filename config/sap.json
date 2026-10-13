@@ -1,0 +1,43 @@
+{
+  "alpha": 0.05,
+  "power": 0.8,
+  "reps_bootstrap": 10000,
+  "reps_permutation": 10000,
+  "seed": 20260925,
+  "anchor_model": "deepseek",
+  "seeds": {
+    "deepseek": ["s42", "s11", "s23", "s7", "s99"],
+    "codellama": ["s42", "s11", "s23"],
+    "mistral": ["s42", "s11", "s23"]
+  },
+  "base_conditions": ["zero_shot", "rag_only"],
+  "adapter_conditions": ["ft_only", "full_neutral", "full_aware"],
+  "families": {
+    "RQ1": [["full_aware", "zero_shot"], ["full_aware", "rag_only"], ["full_aware", "ft_only"]],
+    "RQ2": [["full_aware", "full_neutral"]]
+  },
+  "descriptive": ["bv", "er", "er_trace", "trace_action", "trace_then"],
+  "subsets": ["post_cutoff_all", "time_coherent_30d", "residual_clean", "self_contained"],
+  "pre_t_flags": {"path": "evidence/pret_flags/FLAGGED_PRE_T.tsv",
+                  "sha256": "dbf347d85f8b5092e382e4c9e3fdd014b5cf961697e44d51c929d3253ae81987"},
+  "ca_prec_tau": 0.25,
+  "ca_prec_control_taus": [0.1, 0.25, 0.5],
+  "ca_prec_controls": ["gold", "gold-helpers", "gold-helpers-renamed", "swap", "stub-v3m", "stub-v3all",
+                       "stub-v3names", "stub-v3top4"],
+  "deferred": ["learning_curve", "ablations", "semv"],
+  "learning_curve": ["lc600", "lc1200"],
+  "ablations": ["abl_4a", "abl_4b", "placebo"],
+  "dose_buckets": [[0, 0], [1, 2], [3, null]],
+  "dev": {"variant": "dev_pilot_v0", "seed": "s42"},
+  "dev_selection": {"baseline": "dev_pilot_v0", "condition": "full_aware", "margin_scenarios": 3},
+  "error_reading": {"n_records": 30, "seed": 20261006, "condition": "full_aware"},
+  "semv": {
+    "n_records": 50,
+    "conditions": ["full_aware", "ft_only"],
+    "rubric": [
+      "0: the steps do not do what the scenario's undefined steps describe (wrong action, wrong assertion, or empty)",
+      "1: partly right: the right action or check for some steps, or the right intent with a wrong project API",
+      "2: right: every undefined step does what it says, through the project's own services and helpers"
+    ]
+  }
+}

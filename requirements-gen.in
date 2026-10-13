@@ -1,0 +1,16 @@
+# Generation pod environment. vLLM 0.27.1 pins torch 2.13.0 (the PyPI CUDA 13.0 build) while training uses
+# torch 2.14.0, so generation has its own venv: KIND=gen bash ops/pod_bootstrap.sh (-> $WS/venv-gen). transformers and
+# tokenizers are the training pins, so prompt ids are the training ids; bitsandbytes is the training pin, so vLLM's
+# in-flight NF4 is the training NF4. 0.27.1 is the last vLLM with bitsandbytes in tree (0.28.0 moved it to a plugin).
+# The first bootstrap freezes the resolved set into requirements-gen.lock: the first generation pod (Linux x86_64,
+# Python 3.12) ran `uv pip install` and froze the installed set. These pins equal v2gpu.engines.GEN_PINS (tested).
+vllm==0.27.1
+torch==2.13.0
+transformers==5.17.0
+tokenizers==0.23.2
+bitsandbytes==0.50.2
+peft==0.21.0
+safetensors==0.8.0
+huggingface_hub
+jinja2
+pytest

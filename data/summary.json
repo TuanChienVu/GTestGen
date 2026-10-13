@@ -1,0 +1,88 @@
+{
+  "by_repository": {
+    "PrestaShop/PrestaShop": {
+      "catalog_functions": 1389,
+      "commit": "1f83d7b44599752beb2762498bc8cafb7ed3476a",
+      "context_files": 1,
+      "feature_files": 325,
+      "files": 495,
+      "license_file": "LICENSE.md",
+      "license_spdx": "OSL-3.0",
+      "notice_file": null,
+      "records": 995,
+      "scenarios": 1668,
+      "step_files": 169
+    },
+    "Sylius/Sylius": {
+      "catalog_functions": 4670,
+      "commit": "c096ca3fc01545ee25078ba3df914bd2069c7fa6",
+      "feature_files": 855,
+      "files": 1303,
+      "license_file": "LICENSE",
+      "license_spdx": "MIT",
+      "notice_file": null,
+      "records": 1953,
+      "scenarios": 2411,
+      "scoping_files": 181,
+      "step_files": 267
+    },
+    "airslie/renalware": {
+      "catalog_functions": 341,
+      "commit": "7105621abe1c877c8543d8358520f499ec0626f5",
+      "feature_files": 63,
+      "files": 93,
+      "license_file": "MIT-LICENSE",
+      "license_spdx": "MIT",
+      "notice_file": null,
+      "records": 107,
+      "scenarios": 125,
+      "step_files": 30
+    },
+    "apache/fineract": {
+      "catalog_functions": 1483,
+      "commit": "95d4447511444a5379d5f666923234a6b031c131",
+      "feature_files": 169,
+      "files": 247,
+      "license_file": "LICENSE_SOURCE",
+      "license_spdx": "Apache-2.0",
+      "notice_file": "NOTICE_SOURCE",
+      "records": 193,
+      "scenarios": 3887,
+      "step_files": 78
+    },
+    "nhsconnect/gpconnect-provider-testing": {
+      "catalog_functions": 618,
+      "commit": "c59258277e7f2819965f97f0d9c5416ed4b09e45",
+      "feature_files": 22,
+      "files": 57,
+      "license_file": "LICENSE",
+      "license_spdx": "Apache-2.0",
+      "notice_file": null,
+      "records": 239,
+      "scenarios": 409,
+      "step_files": 35
+    },
+    "openMF/ph-ee-integration-test": {
+      "catalog_functions": 409,
+      "commit": "4a833d5e36feca8de59aaa22cd319a3e0df0ca6c",
+      "feature_files": 34,
+      "files": 72,
+      "license_file": "LICENSE",
+      "license_spdx": "MPL-2.0",
+      "notice_file": null,
+      "records": 68,
+      "scenarios": 179,
+      "step_files": 38
+    }
+  },
+  "total": {
+    "catalog_functions": 8910,
+    "context_files": 1,
+    "feature_files": 1468,
+    "files": 2267,
+    "records": 3555,
+    "scenarios": 8679,
+    "scoping_files": 181,
+    "step_files": 617
+  }
+}

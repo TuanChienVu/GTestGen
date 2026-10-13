@@ -1,0 +1,25 @@
+{
+ "_note": "v7 set (11 adapters): DeepSeek 5 full adapters (seeds 42/11/23/7/99), scaled from the v4 measurement (3 full + 3 lc600 + 3 lc1200) by 0.9537 so each full adapter is 24.6 M tokens, as planned; CodeLlama and Mistral 3 full adapters each, as measured. Scenario A, 3 epochs (each record meets F0, F1, F2 once), tokens in millions per sequence-length bucket; dev forward passes counted at 1/3 of a training token; records with F0 + answer > 8,192 excluded (rule D). Measured 24/09 on the official Phase 2 records (tool commit 6d3373d), context budget 1536/1536, cap 8192. Recompute with the real compose once it exists.",
+ "epochs_expected": 3,
+ "epochs_max": 5,
+ "models": {
+  "codellama": {
+   "1024": 3.52,
+   "2048": 6.96,
+   "4096": 38.58,
+   "8192": 21.33
+  },
+  "deepseek": {
+   "1024": 6.09,
+   "2048": 12.44,
+   "4096": 67.2,
+   "8192": 37.18
+  },
+  "mistral": {
+   "1024": 3.56,
+   "2048": 7.03,
+   "4096": 38.43,
+   "8192": 20.7
+  }
+ }
+}

@@ -1,0 +1,85 @@
+{
+ "tong": {
+  "commit_goc": "ce20632902d7df26923a5aae1b423c29afdf2005",
+  "pham_vi": [
+   "v2tools/stats.py",
+   "v2tools/sap.py",
+   "scripts/sap_calibrate.py",
+   "scripts/sap_dev_select.py",
+   "scripts/sap_errsample.py",
+   "scripts/sap_lock.py",
+   "scripts/sap_mde.py",
+   "scripts/sap_run.py",
+   "scripts/sap_swrap.py",
+   "scripts/sap_verify.py"
+  ],
+  "tep": 10,
+  "truot": 0,
+  "dat": 10,
+  "tai_lieu_doi": 0,
+  "moi_duyet": 0,
+  "mat_duyet": 0
+ },
+ "tep": [
+  {
+   "tep": "scripts/sap_calibrate.py",
+   "ket_qua": "ĐẠT",
+   "loi": [],
+   "ngoai_le": 0
+  },
+  {
+   "tep": "scripts/sap_dev_select.py",
+   "ket_qua": "ĐẠT",
+   "loi": [],
+   "ngoai_le": 0
+  },
+  {
+   "tep": "scripts/sap_errsample.py",
+   "ket_qua": "ĐẠT",
+   "loi": [],
+   "ngoai_le": 0
+  },
+  {
+   "tep": "scripts/sap_lock.py",
+   "ket_qua": "ĐẠT",
+   "loi": [],
+   "ngoai_le": 0
+  },
+  {
+   "tep": "scripts/sap_mde.py",
+   "ket_qua": "ĐẠT",
+   "loi": [],
+   "ngoai_le": 0
+  },
+  {
+   "tep": "scripts/sap_run.py",
+   "ket_qua": "ĐẠT",
+   "loi": [],
+   "ngoai_le": 4
+  },
+  {
+   "tep": "scripts/sap_swrap.py",
+   "ket_qua": "ĐẠT",
+   "loi": [],
+   "ngoai_le": 2
+  },
+  {
+   "tep": "scripts/sap_verify.py",
+   "ket_qua": "ĐẠT",
+   "loi": [],
+   "ngoai_le": 0
+  },
+  {
+   "tep": "v2tools/sap.py",
+   "ket_qua": "ĐẠT",
+   "loi": [],
+   "ngoai_le": 11
+  },
+  {
+   "tep": "v2tools/stats.py",
+   "ket_qua": "ĐẠT",
+   "loi": [],
+   "ngoai_le": 0
+  }
+ ]
+}

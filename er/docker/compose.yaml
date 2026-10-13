@@ -1,0 +1,65 @@
+# GTestGen V2 — ER harness for Sylius @ c096ca3.
+#   docker compose -f er/docker/compose.yaml build sylius
+#   er/docker/init-db.sh   starts db (never recreates it) and creates sylius_lane1..3, DML-only users er_laneN with a
+#                          random password in $ER_SECRETS_DIR/laneN.pw (tmpfs: rerun after every restart of db;
+#                          ER_RESET=1 drops and re-migrates a poisoned lane)
+# Each ER run is a fresh container (clean tree = image layer) on network gtestgen-er_er; lanes use separate databases.
+# root has no network account (MYSQL_ROOT_HOST=localhost): only `docker exec` into db reaches it. After a change of the
+# db service config, recreate it once, outside any batch (wipes the tmpfs):
+#   docker compose -f er/docker/compose.yaml up -d --wait --force-recreate db && er/docker/init-db.sh
+# Never run `up -d db` during a batch: a changed config recreates db and wipes the tmpfs (the batch preflight and the
+# per-run schema checks then stop the batch).
+name: gtestgen-er
+
+networks:
+  er:
+    internal: true  # no Internet for the database or for runs of model code
+
+services:
+  db:
+    image: mysql:8.4@sha256:0744ee5ef89ce6ccfa13de3e579fe6b9e27f93dd70da9c06d2c908b1b193fb8d
+    environment:
+      MYSQL_ROOT_PASSWORD: root  # a local, single-use database on tmpfs; root cannot log in from the er network
+      MYSQL_ROOT_HOST: localhost  # root only over the socket (docker exec), never from a run container
+    command:
+      - --skip-log-bin
+      - --innodb-flush-log-at-trx-commit=0
+      - --innodb-doublewrite=0
+      - --innodb-buffer-pool-size=256M
+      - --performance-schema=0
+      - --max-connections=50
+    networks: [er]
+    tmpfs:
+      - /var/lib/mysql:size=1g
+    healthcheck:
+      # TCP on purpose (the init server has no network); "access denied" still exits 0: the server is up
+      test: ["CMD", "mysqladmin", "ping", "-h", "127.0.0.1", "--silent"]
+      interval: 2s
+      timeout: 3s
+      retries: 60
+
+  sylius:
+    image: gtestgen-er/sylius:c096ca3
+    build:
+      context: .
+      target: app
+      args:
+        COMPOSER_LOCK_SHA256: f71ed33c72a4e30df98db06bf8fa4688e40b3328af9ac982ff1a5bfd86a9e72f
+    profiles: ["run"]
+    networks: [er]
+    depends_on:
+      db:
+        condition: service_healthy
+
+  sylius-trace:
+    image: gtestgen-er/sylius-trace:c096ca3
+    build:
+      context: .
+      target: trace
+      args:
+        COMPOSER_LOCK_SHA256: f71ed33c72a4e30df98db06bf8fa4688e40b3328af9ac982ff1a5bfd86a9e72f
+    profiles: ["run"]
+    networks: [er]
+    depends_on:
+      db:
+        condition: service_healthy

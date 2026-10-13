@@ -1,0 +1,18 @@
+[
+  {"dir": "Sylius", "repo": "Sylius/Sylius", "branch": "2.3", "language": "php",
+   "styles": ["php_attribute", "php_docblock"], "step_globs": ["src/Sylius/Behat/Context/*.php"], "license_spdx": "MIT",
+   "scoping": {"kind": "behat_suites", "suite_globs": ["src/Sylius/Behat/Resources/config/suites/*.php"],
+               "service_globs": ["src/Sylius/Behat/Resources/config/services/contexts/*.php"],
+               "psr4": {"Sylius\\Behat\\": "src/Sylius/Behat/"}}},
+  {"dir": "PrestaShop", "repo": "PrestaShop/PrestaShop", "branch": "develop", "language": "php",
+   "styles": ["php_docblock", "php_attribute"], "step_globs": ["tests/Integration/Behaviour/Features/Context/*.php"], "license_spdx": "OSL-3.0"},
+  {"dir": "fineract", "repo": "apache/fineract", "branch": "develop", "language": "java",
+   "styles": ["java_annotation", "java_lambda"], "step_globs": ["*StepDef*.java", "*Steps.java", "*Definitions.java", "*LogParameterEscapeUtilTest.java"], "license_spdx": "Apache-2.0"},
+  {"dir": "renalware", "repo": "airslie/renalware", "branch": "main", "language": "ruby",
+   "styles": ["ruby_block"], "step_globs": ["*step_definitions*/*.rb", "*_steps.rb"], "license_spdx": "MIT"},
+  {"dir": "gpconnect-provider-testing", "repo": "nhsconnect/gpconnect-provider-testing", "branch": "master", "language": "csharp",
+   "styles": ["csharp_attribute"], "step_globs": ["*/Steps/*.cs", "*Steps.cs"], "license_spdx": "Apache-2.0",
+   "scoping": {"kind": "specflow_scope"}},
+  {"dir": "ph-ee-integration-test", "repo": "openMF/ph-ee-integration-test", "branch": "master", "language": "java",
+   "styles": ["java_annotation"], "step_globs": ["*stepdef*/*.java", "*StepDef*.java"], "license_spdx": "MPL-2.0"}
+]

@@ -1,0 +1,11 @@
+# GPU pod environment (training). The first bootstrap freezes the resolved set into requirements-gpu.lock.
+# torch 2.14.0 from PyPI is a CUDA 13.0 build: create pods with minCudaVersion 13.0.
+torch==2.14.0
+transformers==5.17.0
+peft==0.21.0
+bitsandbytes==0.50.2
+safetensors==0.8.0
+tokenizers==0.23.2
+huggingface_hub
+jinja2
+pytest

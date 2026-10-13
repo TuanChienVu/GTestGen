@@ -1,0 +1,17 @@
+# Generation pod environment, pre-declared fallback pin set "fallback-tf" (decision 24/09): transformers 5.15.0,
+# the version vLLM 0.28/0.29 use. It needs tokenizers <= 0.23.0 and 0.23.0 was never released, so tokenizers 0.22.2:
+# tokenization may differ from training, so every job command carries the laptop's ids_sha256 and a job whose prompt
+# ids differ is refused.
+# Chosen ONLY at the canary (KIND=gen GEN_SET=fallback-tf bash ops/pod_bootstrap.sh), then fixed for the whole
+# run: every job names it (--pin-set fallback-tf). Resolves for x86_64-manylinux_2_28, Python 3.12 (uv pip
+# compile). These pins equal v2gpu.engines.PIN_SETS["fallback-tf"] (tested).
+vllm==0.27.1
+torch==2.13.0
+transformers==5.15.0
+tokenizers==0.22.2
+bitsandbytes==0.50.2
+peft==0.21.0
+safetensors==0.8.0
+huggingface_hub
+jinja2
+pytest

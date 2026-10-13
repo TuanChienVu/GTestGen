@@ -1,0 +1,172 @@
+{
+ "definition": "special ids plus added tokens whose content (without a leading ▁) starts with '<'",
+ "models": {
+  "codellama": {
+   "allowed_added_tokens": [],
+   "control_tokens": [
+    {
+     "content": "<unk>",
+     "id": 0
+    },
+    {
+     "content": "<s>",
+     "id": 1
+    },
+    {
+     "content": "</s>",
+     "id": 2
+    },
+    {
+     "content": "▁<PRE>",
+     "id": 32007
+    },
+    {
+     "content": "▁<SUF>",
+     "id": 32008
+    },
+    {
+     "content": "▁<MID>",
+     "id": 32009
+    },
+    {
+     "content": "▁<EOT>",
+     "id": 32010
+    },
+    {
+     "content": "<FILL_ME>",
+     "id": 32016
+    }
+   ],
+   "hf_id": "codellama/CodeLlama-7b-Instruct-hf",
+   "revision": "22cb240e0292b0b5ab4c17ccd97aa3a2f799cbed"
+  },
+  "deepseek": {
+   "allowed_added_tokens": [
+    {
+     "content": "õ",
+     "id": 32000,
+     "reason": "ordinary letter or symbol, not a control token"
+    },
+    {
+     "content": "÷",
+     "id": 32001,
+     "reason": "ordinary letter or symbol, not a control token"
+    },
+    {
+     "content": "Á",
+     "id": 32002,
+     "reason": "ordinary letter or symbol, not a control token"
+    },
+    {
+     "content": "ý",
+     "id": 32003,
+     "reason": "ordinary letter or symbol, not a control token"
+    },
+    {
+     "content": "À",
+     "id": 32004,
+     "reason": "ordinary letter or symbol, not a control token"
+    },
+    {
+     "content": "ÿ",
+     "id": 32005,
+     "reason": "ordinary letter or symbol, not a control token"
+    },
+    {
+     "content": "ø",
+     "id": 32006,
+     "reason": "ordinary letter or symbol, not a control token"
+    },
+    {
+     "content": "ú",
+     "id": 32007,
+     "reason": "ordinary letter or symbol, not a control token"
+    },
+    {
+     "content": "þ",
+     "id": 32008,
+     "reason": "ordinary letter or symbol, not a control token"
+    },
+    {
+     "content": "ü",
+     "id": 32009,
+     "reason": "ordinary letter or symbol, not a control token"
+    },
+    {
+     "content": "ù",
+     "id": 32010,
+     "reason": "ordinary letter or symbol, not a control token"
+    },
+    {
+     "content": "ö",
+     "id": 32011,
+     "reason": "ordinary letter or symbol, not a control token"
+    },
+    {
+     "content": "û",
+     "id": 32012,
+     "reason": "ordinary letter or symbol, not a control token"
+    }
+   ],
+   "control_tokens": [
+    {
+     "content": "<｜begin▁of▁sentence｜>",
+     "id": 32013
+    },
+    {
+     "content": "<｜end▁of▁sentence｜>",
+     "id": 32014
+    },
+    {
+     "content": "<｜fim▁hole｜>",
+     "id": 32015
+    },
+    {
+     "content": "<｜fim▁begin｜>",
+     "id": 32016
+    },
+    {
+     "content": "<｜fim▁end｜>",
+     "id": 32017
+    },
+    {
+     "content": "<pad>",
+     "id": 32018
+    },
+    {
+     "content": "<|User|>",
+     "id": 32019
+    },
+    {
+     "content": "<|Assistant|>",
+     "id": 32020
+    },
+    {
+     "content": "<|EOT|>",
+     "id": 32021
+    }
+   ],
+   "hf_id": "deepseek-ai/deepseek-coder-6.7b-instruct",
+   "revision": "e5d64addd26a6a1db0f9b863abf6ee3141936807"
+  },
+  "mistral": {
+   "allowed_added_tokens": [],
+   "control_tokens": [
+    {
+     "content": "<unk>",
+     "id": 0
+    },
+    {
+     "content": "<s>",
+     "id": 1
+    },
+    {
+     "content": "</s>",
+     "id": 2
+    }
+   ],
+   "hf_id": "mistralai/Mistral-7B-Instruct-v0.2",
+   "revision": "63a8b081895390a26e140280378bc85ec8bce07a"
+  }
+ }
+}
